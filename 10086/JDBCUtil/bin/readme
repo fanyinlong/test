@@ -1,0 +1,22 @@
+DAO 设计模式： Data Access Object(数据库访问对象)
+主要是进行数据操作,属于Java的持久层操作,对持久层的操作进行一个细分责任化。
+
+DAO的主要组成：
+1：VO(model,pojo,javaBean)对应于数据库的表,其内主要由属性及set get方法组成
+2：DAO:主要负责数据操作的接口,在其内定义针对数据的各种增删改查方法。
+3：impl：DAO的实现类,负责实现DAO中的方法。
+4：proxy: 主要完成数据库一些链接操作(打开,关闭等),并且调用真实对象进行操作
+5：Factory：通过工厂类来获得一个DAO的实例对象
+6：DataBaseconnection：负责数据库的打开与关闭。
+
+对于包的命名规则：
+1：VO  					com.zhiyou.model		com.zhiyou.pojo		com.zhiyou.bean
+2:DAO					com.zhiyou.dao	
+3:impl					com.zhiyou.dao.impl
+4:proxy					com.zhiyou.dao.proxy
+5:Factory				com.zhiyou.dao.factory
+6:DataBaseconnection	com.zhiyou.dao.databaseconnection
+
+
+
+
